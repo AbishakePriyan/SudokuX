@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://sudokux.onrender.com/api",
 });
 
 export default API;
@@ -9,7 +9,7 @@ export default API;
 export const fetchProfile = async (email) => {
   if (!email) return { error: "No email provided" };
   try {
-    const res = await axios.get(`http://localhost:5000/routes/auth/`, {
+    const res = await axios.get(`https://sudokux.onrender.com/routes/auth/`, {
       params: { email },
     });
     return res.data;
